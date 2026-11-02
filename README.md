@@ -8,6 +8,10 @@ Engineers lose time gathering context, tracing access failures, checking configu
 
 ## My Roche hackathon participation
 
+![Roche Dev{x}Arena 2026 hackathon cover, 5-8 October 2026](docs/images/roche-devx-days-2026-cover.jpg)
+
+*Cover from the Dev(x) Days hackathon wrap-up presentation.*
+
 I participated in **Roche's Dev{x}Arena 2026: AI Teammate** hackathon as **NaijaAI**, entering the **Build track** and using **ONA** to develop Patch. The event was part of **Dev(x) Days 2026** at Roche Digital Technology.
 
 The challenge was to build an AI teammate that could handle a real problem within clear boundaries: **Trigger > Context > Reason > Act > Verify > Report**. Patch applies that idea to API exposure investigation, approved repairs, and independent verification.
