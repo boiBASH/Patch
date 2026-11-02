@@ -1,0 +1,7 @@
+{
+  "requireAuthentication": false,
+  "allowedRoles": ["PATIENT", "ADMIN", "AUDITOR"],
+  "responseFields": ["id", "code", "name", "type", "contactEmail", "onboardingNotes"],
+  "securityHeaders": false,
+  "allowedOrigins": ["*"]
+}

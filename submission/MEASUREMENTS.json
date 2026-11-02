@@ -1,0 +1,69 @@
+{
+  "recordedDate": "2026-10-07",
+  "sampleCountPerWorkflow": 1,
+  "scope": "Sanitized summary of local rehearsals. Full source, credentials and model metadata remain in local evidence.",
+  "projectCopy": {
+    "runId": "5f442a32-359d-4a57-9644-ba1aae74b250",
+    "engineElapsedMs": 81999,
+    "baselineFailedChecks": 12,
+    "candidateExposureChecks": {
+      "passed": 20,
+      "total": 20
+    },
+    "apiTestsIncludingExposureChecks": {
+      "passed": 92,
+      "total": 92
+    },
+    "applicationBuild": "PASS",
+    "sourceFilesScanned": 85,
+    "sourceSecretScan": "PASS",
+    "originalUnchanged": true,
+    "gate": "HOLD",
+    "blockers": [
+      "dependency advisories"
+    ],
+    "productionAdvisories": 8,
+    "humanReviewMeasured": false,
+    "dependencyRemediationMeasured": false,
+    "records": "synthetic database responses"
+  },
+  "sandbox": {
+    "runId": "b6a03b53-cb39-4ba3-ab06-d3c7c32de0d9",
+    "commandElapsedMs": 5188,
+    "engineElapsedMs": 5152,
+    "candidateChecks": {
+      "passed": 36,
+      "total": 36
+    },
+    "baselineFailedChecks": 32,
+    "approvedRepairs": 5,
+    "humanReviewMeasured": false
+  },
+  "planningAssumptions": {
+    "scope": "smaller synthetic policy sandbox only",
+    "manualMinutes": [
+      15,
+      30
+    ],
+    "reviewMinutes": [
+      2,
+      5
+    ],
+    "assistedMinutes": [
+      2.09,
+      5.09
+    ],
+    "potentialSavedMinutes": [
+      9.91,
+      27.91
+    ],
+    "measuredManualBaseline": null,
+    "measuredWeeklyFrequency": null
+  },
+  "sources": {
+    "industryTimingContext": "https://github.blog/news-insights/product-news/secure-code-more-than-three-times-faster-with-copilot-autofix/",
+    "authorizationTestWork": "https://wstg.owasp.org/v4.2/4-Web_Application_Security_Testing/05-Authorization_Testing/02-Testing_for_Bypassing_Authorization_Schema/",
+    "authorizationAutomation": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Testing_Automation_Cheat_Sheet.html",
+    "secureDevelopment": "https://csrc.nist.gov/pubs/sp/800/218/final"
+  }
+}

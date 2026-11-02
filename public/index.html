@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Release Detective · API exposure guardian</title>
+  <link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark">rd<span>.</span></span><span>Release<br>Detective</span></a>
+    <div class="workspace"><span class="avatar">NA</span><div><strong>Naija AI</strong><small>DevX Arena 2026</small></div><span class="workspace-arrow">⌄</span></div>
+    <div class="nav-label">WORKSPACE</div>
+    <a class="nav-item selected" href="#workspace"><span>◈</span> Investigations <span class="nav-count" id="run-count">0</span></a>
+    <a class="nav-item" href="#scope"><span>◎</span> Test scope</a>
+    <div class="nav-label recent-label">RECENT RUNS</div>
+    <div id="history" class="history"><p class="sidebar-empty">Your investigations will appear here.</p></div>
+    <div class="sidebar-bottom"><span class="online-dot"></span> Local sandbox <span class="version">v0.1</span><p>Detect. Investigate. Verify.</p></div>
+  </aside>
+  <main id="workspace">
+    <header class="topbar"><div><span class="muted">Workspace</span><span class="slash">/</span>Investigations</div><div class="topbar-right"><span class="environment">● Synthetic environment</span><span class="profile">NA</span></div></header>
+    <div class="content">
+      <section class="hero"><div><p class="eyebrow">YOUR RELEASE, UNDER REVIEW</p><h1>Find the exposure.<br><span>Before it finds production.</span></h1><p class="hero-copy">An AI teammate that investigates API risks, prepares a fix,<br class="desktop-break"> and brings back the evidence.</p></div><div class="hero-badge"><span class="radar"><span></span></span><strong>API exposure guardian</strong><small>Human judgment. Verified evidence.</small></div></section>
+      <section class="launch-panel" aria-label="Investigation controls"><div class="scenario-icon">⌘</div><div class="scenario-copy"><strong>Facility API exposure</strong><span>Synthetic scenario inspired by iVoucher · 2 route aliases</span></div><div class="launch-controls"><label for="mode" class="sr-only">Investigation mode</label><select id="mode"><option value="demo">Demo · no API key</option value="openrouter">AI investigation</option></select><button id="start" class="primary"><span>↗</span> Start investigation</button></div></section>
+      <div class="provider-line"><span id="provider-status">Checking model configuration…</span><span>Loopback only · No production access</span></div>
+      <div id="error" class="error-banner" role="alert" hidden></div>
+      <section class="metrics" aria-label="Investigation status"><article class="metric"><span class="metric-label">BASELINE FINDINGS <span>◈</span></span><div id="finding-value">—</div><p id="finding-detail">Waiting for the first investigation</p></article><article class="metric"><span class="metric-label">CANDIDATE CHECKS <span>✓</span></span><div id="check-value">—<small> / —</small></div><p id="check-detail">Evidence comes from live HTTP probes</p></article><article class="metric gate-card"><span class="metric-label">CANDIDATE GATE <span>◇</span></span><div id="gate-value" class="gate-neutral">Not run</div><p id="gate-detail">Every finding must pass verification</p></article></section>
+      <section class="workbench"><div class="workbench-header"><div><h2>Investigation workspace</h2><p id="run-label">Start a run to see the agent at work.</p></div><div class="export-controls"><button id="export" class="secondary" disabled>↓ Report</button><button id="evidence-export" class="secondary" disabled>↓ JSON</button></div></div>
+        <div class="tabs" role="tablist" aria-label="Investigation views"><button role="tab" id="tab-overview" aria-selected="true" aria-controls="overview" data-tab="overview">Overview</button><button role="tab" id="tab-evidence" aria-selected="false" aria-controls="evidence" data-tab="evidence" tabindex="-1">Security checks <span id="checks-badge">0</span></button><button role="tab" id="tab-patch" aria-selected="false" aria-controls="patch" data-tab="patch" tabindex="-1">Proposed fix</button></div>
+        <div id="overview" class="tab-panel" role="tabpanel" aria-labelledby="tab-overview"><div class="overview-grid"><div><div class="section-heading"><h3>Exposure findings</h3><span id="findings-badge" class="subtle-badge">Awaiting scan</span></div><div id="findings"><div class="empty-state"><div class="empty-icon">⌕</div><h3>A clear picture starts with evidence.</h3><p>Run the bundled scenario to discover what is exposed,<br> why it happened, and whether the proposed fix works.</p></div></div></div><aside class="agent-panel"><div class="section-heading"><h3><span class="spark">✧</span> Agent investigation</h3><span id="agent-mode" class="subtle-badge">Standby</span></div><div id="agent-summary"><p class="muted">The agent will connect the findings to their cause and propose a bounded remediation plan.</p></div><div class="activity-heading">ACTIVITY</div><ol id="activity" class="activity"><li class="pending">Ready when you are.</li></ol></aside></div></div>
+        <div id="evidence" class="tab-panel" role="tabpanel" aria-labelledby="tab-evidence" hidden><div class="evidence-toolbar"><div><h3>Independent security verification</h3><p>The same checks run against the baseline and candidate.</p></div><label>Show <select id="evidence-phase"><option value="verification">Candidate</option><option value="baseline">Baseline</option></select></label></div><div class="table-scroll"><table><thead><tr><th>Check</th><th>Expected</th><th>Observed</th><th>Result</th></tr></thead><tbody id="check-rows"></tbody></table></div><p id="checks-empty" class="muted empty-table">Security evidence will appear after the scan.</p></div>
+        <div id="patch" class="tab-panel" role="tabpanel" aria-labelledby="tab-patch" hidden><div class="evidence-toolbar"><div><h3>Candidate policy changes</h3><p>Applied only to an isolated copy of the synthetic fixture.</p></div><button id="candidate-export" class="secondary" disabled>↓ Candidate JSON</button></div><div id="patch-content" class="patch-content"><p class="muted">No candidate has been prepared yet.</p></div><p class="patch-note">Security expectations stay fixed. Model output cannot edit the verifier or approve a deployment.</p></div>
+      </section>
+      <section id="scope" class="scope"><div><span class="eyebrow">BOUNDED BY DESIGN</span><h3>Small scope. Inspectable proof.</h3></div><div><p>This prototype tests a bundled synthetic API for missing authentication, incorrect role access, data overexposure, security headers, and CORS.</p><p>Passing these checks prepares a candidate for human review. Real application code, cloud infrastructure, and deployment are outside this demo.</p></div></section>
+      <footer>RELEASE DETECTIVE <span>Built by Naija AI · DevX Arena 2026</span></footer>
+    </div>
+  </main>
+</body>
+</html>

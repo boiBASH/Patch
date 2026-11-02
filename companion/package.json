@@ -1,0 +1,40 @@
+{
+  "name": "release-detective-companion",
+  "displayName": "Release Detective - Patch",
+  "description": "Meet Patch, your floating coding and security dog for VS Code.",
+  "version": "0.5.5",
+  "publisher": "naija-ai",
+  "private": true,
+  "engines": { "vscode": "^1.100.0", "node": ">=22" },
+  "categories": ["Other", "Linters"],
+  "icon": "assets/patch.png",
+  "main": "./extension.cjs",
+  "extensionKind": ["ui"],
+  "activationEvents": ["onStartupFinished"],
+  "capabilities": { "untrustedWorkspaces": { "supported": false, "description": "The companion launches a bundled local desktop window only in trusted workspaces." }, "virtualWorkspaces": false },
+  "contributes": {
+    "commands": [
+      { "command": "releaseDetective.showPet", "title": "Release Detective: Show Patch" },
+      { "command": "releaseDetective.hidePet", "title": "Release Detective: Hide Patch" },
+      { "command": "releaseDetective.scan", "title": "Release Detective: Check Active File" },
+      { "command": "releaseDetective.findings", "title": "Release Detective: Show Findings" },
+      { "command": "releaseDetective.explain", "title": "Release Detective: Explain Current Finding with AI" },
+      { "command": "releaseDetective.investigate", "title": "Release Detective: Investigate Sandbox API with AI" },
+      { "command": "releaseDetective.project", "title": "Release Detective: Investigate iVoucher Project Copy with AI" },
+      { "command": "releaseDetective.demo", "title": "Release Detective: Investigate Sandbox API with Offline Playbook" },
+      { "command": "releaseDetective.review", "title": "Release Detective: Review Candidate Fix" },
+      { "command": "releaseDetective.evidence", "title": "Release Detective: Open Investigation Evidence" },
+      { "command": "releaseDetective.cancel", "title": "Release Detective: Cancel Investigation" },
+      { "command": "releaseDetective.configureKey", "title": "Release Detective: Set AI Service Key" }
+    ],
+    "configuration": {
+      "title": "Release Detective",
+      "properties": {
+        "releaseDetective.autoShow": { "type": "boolean", "default": true, "scope": "application", "description": "Show Patch when a trusted local workspace opens." },
+        "releaseDetective.pythonPath": { "type": "string", "default": "", "scope": "application", "description": "Optional absolute path to a Python interpreter with tkinter. User settings only." },
+        "releaseDetective.model": { "type": "string", "default": "openai/gpt-4.1-mini", "scope": "application", "description": "AI model ID for explicit Explain and Investigate actions. Local scanning does not use AI." }
+      }
+    }
+  },
+  "scripts": { "test": "node --test --test-isolation=none test/*.test.cjs", "audit": "npm audit --omit=dev --audit-level=low" }
+}
