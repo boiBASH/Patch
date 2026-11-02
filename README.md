@@ -2,9 +2,19 @@
 
 <img src="companion/assets/patch.png" alt="Patch, a pixel-art dog with a purple collar" width="160">
 
-**Patch lives over VS Code, helps investigate API exposure, prepares a bounded fix, and verifies the candidate for an engineer to review.** Release Detective is the investigation engine behind Patch. Built by **Naija AI for DevX Arena 2026**, inspired by the repeated investigation work we faced while building iVoucher.
+**Patch lives over VS Code, helps investigate API exposure, prepares a bounded fix, and verifies the candidate for an engineer to review.** Release Detective is the investigation engine behind Patch. Built by **[Opeyemi Bashirudeen](https://github.com/boiBASH) (NaijaAI)** for **Roche's DevX Arena 2026 hackathon**, part of **Dev(x) Days 2026**, and inspired by the repeated investigation work we faced while building iVoucher.
 
 Engineers lose time gathering context, tracing access failures, checking configuration, and repeating release checks. Patch takes on a defined investigation and returns a code diff, test results, and remaining risks, so the engineer can focus on decisions that need judgment.
+
+## My Roche hackathon participation
+
+I participated in **Roche's Dev{x}Arena 2026: AI Teammate** hackathon as **NaijaAI**, entering the **Build track** and using **ONA** to develop Patch. The event was part of **Dev(x) Days 2026** at Roche Digital Technology.
+
+The challenge was to build an AI teammate that could handle a real problem within clear boundaries: **Trigger > Context > Reason > Act > Verify > Report**. Patch applies that idea to API exposure investigation, approved repairs, and independent verification.
+
+In the **13 October 2026 wrap-up**, Patch was featured under **"Also in the spotlight"**. The organisers highlighted that it kept the release on **HOLD** when eight production dependency advisories remained, even after the exposed route was repaired. They also cited Patch as an example of **rules enforced in code, human approval, and checks performed outside the model**.
+
+*Hackathon context and recognition: Dev(x) Days wrap-up presentation, slides 2, 9, 11 and 19.*
 
 ## What Patch does
 
